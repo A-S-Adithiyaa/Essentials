@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block title %}Download via Code{% endblock %} {%
+block content %}
+<h2>Download Shared Upload</h2>
+<p>Enter the 6-character code you received to download the files.</p>
+
+<form method="POST">
+  <div class="mb-3">
+    <input
+      class="form-control text-uppercase"
+      type="text"
+      name="code"
+      maxlength="6"
+      required
+      placeholder="Enter code like X9F8B2"
+    />
+  </div>
+  <div class="d-grid">
+    <button class="btn btn-primary" type="submit">Download</button>
+  </div>
+</form>
+
+{% if error %}
+<div class="alert alert-danger mt-3">{{ error }}</div>
+{% endif %} {% endblock %}
